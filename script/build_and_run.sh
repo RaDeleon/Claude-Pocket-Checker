@@ -5,7 +5,9 @@ cd "$ROOT_DIR"
 MODE="${1:-run}"
 APP_NAME="ClaudePocketChecker"
 APP_BUNDLE="$ROOT_DIR/dist/Claude Pocket Checker.app"
-mkdir -p "$ROOT_DIR/.build/cache" "$APP_BUNDLE/Contents/MacOS"
+mkdir -p "$ROOT_DIR/.build/cache" "$APP_BUNDLE/Contents/MacOS" "$APP_BUNDLE/Contents/Resources"
+python3 "$ROOT_DIR/script/make_icon.py" "$ROOT_DIR/docs/assets/icon.png" "$APP_BUNDLE/Contents/Resources/AppIcon.icns"
+cp "$ROOT_DIR/LICENSE" "$APP_BUNDLE/Contents/Resources/LICENSE.txt"
 # Stop only this companion, never Claude Desktop.
 /usr/bin/pkill -x "$APP_NAME" >/dev/null 2>&1 || true
 CLANG_MODULE_CACHE_PATH="$ROOT_DIR/.build/cache" swift build --disable-sandbox --cache-path "$ROOT_DIR/.build/cache" -Xswiftc -module-cache-path -Xswiftc "$ROOT_DIR/.build/cache"
@@ -18,8 +20,9 @@ cat > "$APP_BUNDLE/Contents/Info.plist" <<'PLIST'
 <key>CFBundleExecutable</key><string>ClaudePocketChecker</string>
 <key>CFBundleIdentifier</key><string>com.radeleon.ClaudePocketChecker</string>
 <key>CFBundleName</key><string>Claude Pocket Checker</string>
-<key>CFBundleShortVersionString</key><string>0.2.1</string>
-<key>CFBundleVersion</key><string>4</string>
+<key>CFBundleIconFile</key><string>AppIcon</string>
+<key>CFBundleShortVersionString</key><string>0.2.2</string>
+<key>CFBundleVersion</key><string>5</string>
 <key>CFBundlePackageType</key><string>APPL</string>
 <key>LSMinimumSystemVersion</key><string>14.0</string>
 <key>NSPrincipalClass</key><string>NSApplication</string>

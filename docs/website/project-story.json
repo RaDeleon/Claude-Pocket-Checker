@@ -34,7 +34,8 @@
         "title": "What I verified and what remains",
         "paragraphs": [
           "The prepared public source passes 24 offline tests and compiles into a separate app identity. In the predecessor installed build, two new replies were captured and retained across a full restart without duplicate records. The owner confirmed normal typing and draft advice with native Computer Use off.",
-          "The public build has generalized account defaults and separate data storage; it has not been live-installed over that working copy. Live Work switching, long histories, voice, interrupted replies, very fast retries and broader team deployment remain acceptance work. Developer ID signing and notarization are not claimed."
+          "The public build has generalized account defaults and separate data storage; it has not been live-installed over that working copy. Live Work switching, long histories, voice, interrupted replies, very fast retries and broader team deployment remain acceptance work. Developer ID signing and notarization are not claimed.",
+          "A prebuilt universal DMG and ZIP are now available for macOS 14+, with Apple Silicon and Intel code and optional source builds. Packaged archives pass checksum, bundle, system-library and signature checks. The app is ad-hoc signed and not Apple-notarized; first-launch approval may be required. Intel runtime and fresh-Mac acceptance remain open."
         ]
       }
     ],
@@ -48,11 +49,15 @@
         "answer": "No. Its local task rules are a starting point, with uncertainty and user override. Appropriate model selection still needs task-specific evaluation."
       },
       {
-        "question": "Can an admin view teammates\u2019 prompts or totals?",
+        "question": "Can an admin view teammates’ prompts or totals?",
         "answer": "No central reporting is implemented. Draft text stays in memory and numeric ledgers remain on each Mac."
       }
     ],
     "links": [
+      {
+        "href": "https://github.com/RaDeleon/Claude-Pocket-Checker/releases/download/v0.2.2/Claude-Pocket-Checker-0.2.2-universal-macOS.dmg",
+        "label": "Download the macOS app"
+      },
       {
         "href": "/writing/checking-the-model-before-sending-the-prompt/",
         "label": "Read why I built it"
