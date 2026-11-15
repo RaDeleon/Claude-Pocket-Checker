@@ -1,0 +1,6 @@
+_devlog/
+.git/
+.build/
+.runtime/
+dist/
+.env*

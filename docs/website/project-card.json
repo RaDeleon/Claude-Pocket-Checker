@@ -1,0 +1,20 @@
+{
+  "slug": "claude-pocket-checker",
+  "name": "Claude Pocket Checker",
+  "category": "Native macOS & applied AI",
+  "number": "07",
+  "stack": [
+    "Swift",
+    "SwiftUI",
+    "AppKit",
+    "Accessibility"
+  ],
+  "summary": "A separate macOS panel for regular Claude Desktop Chat: local usage estimates, isolated account totals and before-send model advice.",
+  "problem": "A browser-only meter did not cover my Mac workflow, and choosing the heaviest model for every routine task made it harder to use a limited plan deliberately.",
+  "approach": "I used read-only macOS Accessibility to observe the official Claude app, a volatile reply tracker and a scope-checked numeric ledger. A local draft classifier suggests a model and effort without making another AI call.",
+  "lesson": "An observer needs clear ownership and honest limits. Local advice can guide a choice, but it cannot guarantee equal answers or turn API-price ratios into plan usage.",
+  "status": "Public source preview \u00b7 macOS 14+ \u00b7 experimental",
+  "scope": "Native floating panel, Accessibility parsing, state recovery, account matching, local persistence, model/effort rules and cost-scenario presentation.",
+  "color": "purple",
+  "url": "https://github.com/RaDeleon/Claude-Pocket-Checker"
+}

@@ -1,0 +1,15 @@
+name: Test and build macOS
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - run: python3 script/check_publication.py
+      - run: swift test
+      - run: ./script/build_and_run.sh --build
+      - run: codesign --verify --deep --strict 'dist/Claude Pocket Checker.app'

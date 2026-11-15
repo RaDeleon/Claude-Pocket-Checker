@@ -1,0 +1,43 @@
+# Claude Pocket Checker
+
+A separate macOS panel for regular Claude Desktop Chat: local usage estimates, isolated account totals and before-send model advice.
+
+I used read-only macOS Accessibility to observe the official Claude app, a volatile reply tracker and a scope-checked numeric ledger. A local draft classifier suggests a model and effort without making another AI call.
+
+## A tool for regular Desktop Chat
+
+I do much of my Claude work on a Mac with local tools connected. I wanted to keep that workflow and the official application intact while getting a small, independent view of the usage I could actually observe.
+
+I also kept seeing a model-selection problem: routine writing tasks were being sent to the heaviest options. I wanted advice before sending, with a reason a teammate could understand.
+
+## Read-only native observation and a numeric ledger
+
+SwiftUI provides the panel and AppKit manages its independent floating window. A background Accessibility reader inspects the focused Claude window, identifies messages and the selected model, and matches a configured Personal or Work account label.
+
+A volatile tracker waits for complete, settled reply text before committing a numeric record. Each chat binds to one scope. Unknown labels and conflicting scopes stop accounting; drafts and transcript bodies are never persisted.
+
+## Local model and effort guidance
+
+The draft advisor uses transparent task rules, an explicit task override and an optional Haiku availability setting. It recommends a starting model and effort; the user remains responsible for changing the setting in Claude.
+
+Comparison rows use the same visible-input estimate and a selected hypothetical output length. They help explain API-price differences while leaving exact plan consumption, extra effort tokens and equal answer quality unknown.
+
+## What I verified and what remains
+
+The prepared public source passes 24 offline tests and compiles into a separate app identity. In the predecessor installed build, two new replies were captured and retained across a full restart without duplicate records. The owner confirmed normal typing and draft advice with native Computer Use off.
+
+The public build has generalized account defaults and separate data storage; it has not been live-installed over that working copy. Live Work switching, long histories, voice, interrupted replies, very fast retries and broader team deployment remain acceptance work. Developer ID signing and notarization are not claimed.
+
+## Questions
+
+### Is this a modified Claude client?
+
+No. It is a separate companion that reads the official app through macOS Accessibility. It has no login, embedded browser, proxy, URL handler or model API call.
+
+### Can the advisor guarantee a cheaper model gives the same answer?
+
+No. Its local task rules are a starting point, with uncertainty and user override. Appropriate model selection still needs task-specific evaluation.
+
+### Can an admin view teammates’ prompts or totals?
+
+No central reporting is implemented. Draft text stays in memory and numeric ledgers remain on each Mac.
