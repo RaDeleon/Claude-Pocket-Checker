@@ -13,3 +13,13 @@ jobs:
       - run: swift test
       - run: ./script/build_and_run.sh --build
       - run: codesign --verify --deep --strict 'dist/Claude Pocket Checker.app'
+      - run: python3 script/package_macos.py
+      - run: python3 script/verify_macos.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: macOS-universal-preview
+          path: |
+            dist/*-universal-macOS.dmg
+            dist/*-universal-macOS.zip
+            dist/SHA256SUMS-macos.txt
+          if-no-files-found: error

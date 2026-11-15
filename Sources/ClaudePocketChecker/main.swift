@@ -160,6 +160,10 @@ final class AppDelegate:NSObject,NSApplicationDelegate,NSWindowDelegate {
         panel.collectionBehavior=[.canJoinAllSpaces,.fullScreenAuxiliary];panel.isReleasedWhenClosed=false;panel.delegate=self
         panel.contentView=NSHostingView(rootView:MeterView(meter:model));panel.center();panel.orderFrontRegardless()
         item=NSStatusBar.system.statusItem(withLength:NSStatusItem.variableLength);item.button?.title="≈ Pocket";item.button?.target=self;item.button?.action=#selector(show)
+        if let path=Bundle.main.path(forResource:"AppIcon",ofType:"icns"),let icon=NSImage(contentsOfFile:path) {
+            icon.size=NSSize(width:20,height:20);icon.isTemplate=false
+            item.button?.image=icon;item.button?.title="";item.button?.toolTip="Claude Pocket Checker — show meter"
+        }
     }
     @objc func show(){panel.orderFrontRegardless()}
     func windowShouldClose(_ sender:NSWindow)->Bool {NSApp.terminate(nil);return true}

@@ -78,7 +78,7 @@ That sequence supported keeping the automation path out of further acceptance te
 | Manual draft acceptance | I confirmed model/effort advice and normal typing with native Computer Use off. |
 | Public build | Generalized account defaults and the separate product identity compile; live Work switching and broader team deployment remain open. |
 
-The public preview is installed from source. Local builds are ad-hoc signed; Developer ID signing and notarization are not claimed. Accessibility is a broad permission, so the implementation and its narrow intended read path need to be inspectable.
+The public preview now has a prebuilt universal macOS app, supplied as a DMG and ZIP, so installing it does not require Xcode or a source build. The app is ad-hoc signed; Developer ID signing and notarization are not claimed. The [installation guide](https://github.com/RaDeleon/Claude-Pocket-Checker/blob/main/docs/INSTALL.md) explains Apple’s per-app first-launch approval and Accessibility setup. Accessibility is a broad permission, so the implementation and its narrow intended read path need to be inspectable.
 
 ## What comes next
 
