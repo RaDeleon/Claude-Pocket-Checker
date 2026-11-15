@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/assets/banner.png" width="100%" alt="Claude Pocket Checker original illustrated developer-workspace banner"></p>
+<p align="center"><img src="docs/assets/banner.png?title=1" width="100%" alt="Claude Pocket Checker original illustrated developer-workspace banner"></p>
 <p align="center"><img src="docs/assets/icon.png" width="96" alt="Claude Pocket Checker illustrated app icon"></p>
 <h1 align="center">Claude Pocket Checker</h1>
 <p align="center"><strong>Check the draft. Choose the model. Keep working.</strong></p>
