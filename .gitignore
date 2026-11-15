@@ -1,0 +1,11 @@
+/_devlog/
+/dist/
+/.build/
+/.runtime/
+/verification/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.xcuserstate
+/.codex/
